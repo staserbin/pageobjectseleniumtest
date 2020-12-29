@@ -8,7 +8,7 @@ public class MainClass {
     static WebDriver driver;
 
     public static void main(String[] args) {
-        System.setProperty("webdriver.chrome.driver", "C:\\Users\\SERBIN\\IdeaProjects\\pageobjectseleniumtest\\drivers\\chromedriver.exe");
+        System.setProperty("webdriver.chrome.driver", "C:\\java_projects\\sources\\testselenium\\drivers\\chromedriver.exe");
 
         driver = new ChromeDriver();
         driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);

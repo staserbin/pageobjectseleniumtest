@@ -19,7 +19,7 @@ public class MainPageTest {
     @Before
     public void setUp() {
         /* запускаться веб-драйвер */
-        System.setProperty("webdriver.chrome.driver", "C:\\Users\\SERBIN\\IdeaProjects\\pageobjectseleniumtest\\drivers\\chromedriver.exe");
+        System.setProperty("webdriver.chrome.driver", "C:\\java_projects\\sources\\testselenium\\drivers\\chromedriver.exe");
         driver = new ChromeDriver();
         driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
         driver.manage().window().maximize();
