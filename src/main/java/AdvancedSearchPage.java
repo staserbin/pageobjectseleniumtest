@@ -23,6 +23,11 @@ public class AdvancedSearchPage {
     private By pushedTo = By.xpath("//input[@id='search_push']");
     private By withThisLicense = By.xpath("//select[@id='search_license']");
     private By returnRepo = By.xpath("//body/div[4]/main[1]/form[1]/div[2]/fieldset[2]/label[1]/select[1]");
+    private By withThisExtension = By.xpath("//input[@id='search_extension']");
+    private By ofThisFileSize = By.xpath("//input[@id='search_file_size']");
+    private By inThisPath = By.xpath("//input[@id='search_path']");
+    private By withThisFileName = By.xpath("//input[@id='search_filename']");
+    private By returnCode = By.xpath("//body/div[4]/main[1]/form[1]/div[2]/fieldset[3]/label[1]/select[1]");
     private By searchFooterButton = By.xpath("//body/div[4]/main[1]/form[1]/div[2]/div[1]/div[1]/button[1]");
 
     public AdvancedSearchPage clickSearchHeaderButton() {
@@ -113,6 +118,41 @@ public class AdvancedSearchPage {
         this.pushedToRO(date);
         this.withThisLicenseRO(value1);
         this.returnRepo(value2);
+        return new AdvancedSearchPage(driver);
+    }
+
+    public AdvancedSearchPage withThisExtensionCO(String text) {
+        driver.findElement(withThisExtension).sendKeys("text");
+        return this;
+    }
+
+    public AdvancedSearchPage ofThisFileSizeCO(String number) {
+        driver.findElement(ofThisFileSize).sendKeys(number);
+        return this;
+    }
+
+    public AdvancedSearchPage inThisPathCO(String text) {
+        driver.findElement(inThisPath).sendKeys(text);
+        return this;
+    }
+
+    public AdvancedSearchPage withThisFileNameCO(String text) {
+        driver.findElement(withThisFileName).sendKeys(text);
+        return this;
+    }
+
+    public AdvancedSearchPage returnCode(String value) {
+        Select s = new Select(driver.findElement(returnCode));
+        s.selectByValue(value);
+        return this;
+    }
+
+    public AdvancedSearchPage checkCodeOptions(String text1, String number, String text2, String text3, String value) {
+        this.withThisExtensionCO(text1);
+        this.ofThisFileSizeCO(number);
+        this.inThisPathCO(text2);
+        this.withThisFileNameCO(text3);
+        this.returnCode(value);
         return new AdvancedSearchPage(driver);
     }
 }

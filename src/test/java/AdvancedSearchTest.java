@@ -48,8 +48,16 @@ public class AdvancedSearchTest {
     public void checkAdvancedSearchWithRO() {
         AdvancedSearchPage advancedSearchPage = new AdvancedSearchPage(driver);
         advancedSearchPage.checkRepositoriesOptions("100", "200", "150", "2020-12-24", "0bsd", "true");
-        String out = driver.findElement(By.xpath("//body/div[4]/main[1]/form[1]/div[1]/div[1]/div[1]/div[1]/input[1]")).getAttribute("value");
-        Assert.assertEquals("stars:100 forks:200 size:150 pushed:2020-12-24 license:0bsd fork:true", out);
+        String output = driver.findElement(By.xpath("//body/div[4]/main[1]/form[1]/div[1]/div[1]/div[1]/div[1]/input[1]")).getAttribute("value");
+        Assert.assertEquals("stars:100 forks:200 size:150 pushed:2020-12-24 license:0bsd fork:true", output);
+    }
+
+    @Test
+    public void checkAdvancedSearchWithCO() {
+        AdvancedSearchPage advancedSearchPage = new AdvancedSearchPage(driver);
+        advancedSearchPage.checkCodeOptions("jpg", "2000", "/test/path", "test.name", "true");
+        String output = driver.findElement(By.xpath("//body/div[4]/main[1]/form[1]/div[1]/div[1]/div[1]/div[1]/input[1]")).getAttribute("value");
+        Assert.assertEquals("extension:jpg size:2000 path:/test/path filename:test.name fork:true", output);
     }
 
     @After
