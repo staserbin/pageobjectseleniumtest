@@ -28,6 +28,14 @@ public class AdvancedSearchPage {
     private By inThisPath = By.xpath("//input[@id='search_path']");
     private By withThisFileName = By.xpath("//input[@id='search_filename']");
     private By returnCode = By.xpath("//body/div[4]/main[1]/form[1]/div[2]/fieldset[3]/label[1]/select[1]");
+    private By inTheState = By.xpath("//select[@id='search_state']");
+    private By withThisManyComments = By.xpath("//input[@id='search_comments']");
+    private By withTheLabels = By.xpath("//input[@id='search_labels']");
+    private By openedByTheAuthor = By.xpath("//input[@id='search_author']");
+    private By mentioningTheUsers = By.xpath("//input[@id='search_mention']");
+    private By assignedToTheUsers = By.xpath("//input[@id='search_assignment']");
+    private By updateBeforeTheDate = By.xpath("//input[@id='search_updated_date']");
+
     private By searchFooterButton = By.xpath("//body/div[4]/main[1]/form[1]/div[2]/div[1]/div[1]/button[1]");
 
     public AdvancedSearchPage clickSearchHeaderButton() {
@@ -121,8 +129,10 @@ public class AdvancedSearchPage {
         return new AdvancedSearchPage(driver);
     }
 
+    /* Code options */
+
     public AdvancedSearchPage withThisExtensionCO(String text) {
-        driver.findElement(withThisExtension).sendKeys("text");
+        driver.findElement(withThisExtension).sendKeys(text);
         return this;
     }
 
@@ -141,7 +151,7 @@ public class AdvancedSearchPage {
         return this;
     }
 
-    public AdvancedSearchPage returnCode(String value) {
+    public AdvancedSearchPage returnCodeCO(String value) {
         Select s = new Select(driver.findElement(returnCode));
         s.selectByValue(value);
         return this;
@@ -152,7 +162,60 @@ public class AdvancedSearchPage {
         this.ofThisFileSizeCO(number);
         this.inThisPathCO(text2);
         this.withThisFileNameCO(text3);
-        this.returnCode(value);
+        this.returnCodeCO(value);
         return new AdvancedSearchPage(driver);
     }
+
+    /* Issues options */
+
+    public AdvancedSearchPage inTheStateIO(String value) {
+        Select s = new Select(driver.findElement(inTheState));
+        s.selectByValue(value);
+        return this;
+    }
+
+    public AdvancedSearchPage withThisManyCommentsIO(String text) {
+        driver.findElement(withThisManyComments).sendKeys(text);
+        return this;
+    }
+
+    public AdvancedSearchPage withTheLabelsIO(String text) {
+        driver.findElement(withTheLabels).sendKeys(text);
+        return this;
+    }
+
+    public AdvancedSearchPage openedByTheAuthorIO(String text) {
+        driver.findElement(openedByTheAuthor).sendKeys(text);
+        return this;
+    }
+
+    public AdvancedSearchPage mentioningTheUsersIO(String text) {
+        driver.findElement(mentioningTheUsers).sendKeys(text);
+        return this;
+    }
+
+    public AdvancedSearchPage assignedToTheUsersIO(String text) {
+        driver.findElement(assignedToTheUsers).sendKeys(text);
+        return this;
+    }
+
+    public AdvancedSearchPage updateBeforeTheDateIO(String text) {
+        driver.findElement(updateBeforeTheDate).sendKeys(text);
+        return this;
+    }
+
+    public AdvancedSearchPage checkIssueOptions(String value, String text1, String text2, String text3, String text4, String text5, String text6) {
+        this.inTheStateIO(value);
+        this.withThisManyCommentsIO(text1);
+        this.withTheLabelsIO(text2);
+        this.openedByTheAuthorIO(text3);
+        this.mentioningTheUsersIO(text4);
+        this.assignedToTheUsersIO(text5);
+        this.updateBeforeTheDateIO(text6);
+        return new AdvancedSearchPage(driver);
+    }
+
+    /* Users options */
+
+    /* Wiki options */
 }

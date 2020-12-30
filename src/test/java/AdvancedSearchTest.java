@@ -18,7 +18,7 @@ public class AdvancedSearchTest {
     @Before
     public void setUp() {
         /* запускаться веб-драйвер */
-        System.setProperty("webdriver.chrome.driver", "C:\\java_projects\\sources\\testselenium\\drivers\\chromedriver.exe");
+        System.setProperty("webdriver.chrome.driver", "C:\\Users\\SERBIN\\IdeaProjects\\pageobjectseleniumtest\\drivers\\chromedriver.exe");
         driver = new ChromeDriver();
         driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
         driver.manage().window().maximize();
@@ -28,6 +28,7 @@ public class AdvancedSearchTest {
         advancedSearchPage = new AdvancedSearchPage(driver);
     }
 
+    /* Search field validation */
     @Test
     public void searchFromAdvancedSearchField() {
         AdvancedSearchPage advancedSearchPage = new AdvancedSearchPage(driver);
@@ -36,6 +37,7 @@ public class AdvancedSearchTest {
         Assert.assertTrue(expectedElement.isDisplayed());
     }
 
+    /* Advanced Options section validation */
     @Test
     public void checkAdvancedSearchWithAO() {
         AdvancedSearchPage advancedSearchPage = new AdvancedSearchPage(driver);
@@ -44,6 +46,7 @@ public class AdvancedSearchTest {
         Assert.assertEquals("user:alex repo:testrepo created:2020-12-24 language:Java", output);
     }
 
+    /* Repositories Options section validation */
     @Test
     public void checkAdvancedSearchWithRO() {
         AdvancedSearchPage advancedSearchPage = new AdvancedSearchPage(driver);
@@ -52,12 +55,22 @@ public class AdvancedSearchTest {
         Assert.assertEquals("stars:100 forks:200 size:150 pushed:2020-12-24 license:0bsd fork:true", output);
     }
 
+    /* Code Options section validation */
     @Test
     public void checkAdvancedSearchWithCO() {
         AdvancedSearchPage advancedSearchPage = new AdvancedSearchPage(driver);
         advancedSearchPage.checkCodeOptions("jpg", "2000", "/test/path", "test.name", "true");
         String output = driver.findElement(By.xpath("//body/div[4]/main[1]/form[1]/div[1]/div[1]/div[1]/div[1]/input[1]")).getAttribute("value");
         Assert.assertEquals("extension:jpg size:2000 path:/test/path filename:test.name fork:true", output);
+    }
+
+    /* Issues Options section validation */
+    @Test
+    public void checkAdvancedSearchWithIO() {
+        AdvancedSearchPage advancedSearchPage = new AdvancedSearchPage(driver);
+        advancedSearchPage.checkIssueOptions("open", "100", "bug", "hubot", "tpope", "twp", "2020-12-30");
+        String output = driver.findElement(By.xpath("//body/div[4]/main[1]/form[1]/div[1]/div[1]/div[1]/div[1]/input[1]")).getAttribute("value");
+        Assert.assertEquals("created:2020-09-27 comments:100 label:bug author:hubot mentions:tpope assignee:twp updated:2020-12-30 language:HTML state:open", output);
     }
 
     @After
