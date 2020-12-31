@@ -34,17 +34,17 @@ public class AdvancedSearchPage {
     private By openedByTheAuthor = By.xpath("//input[@id='search_author']");
     private By mentioningTheUsers = By.xpath("//input[@id='search_mention']");
     private By assignedToTheUsers = By.xpath("//input[@id='search_assignment']");
+    private By withThisFullName = By.xpath("//input[@id='search_full_name']");
+    private By fromThisLocation = By.xpath("//input[@id='search_location']");
+    private By withThisManyFollowers = By.xpath("//input[@id='search_followers']");
+    private By withThisManyPublicRepositories = By.xpath("//input[@id='search_public_repos']");
+    private By workingInThisLanguage = By.xpath("//select[@id='search_user_language']");
+    private By updatedBeforeTheDate = By.xpath("//input[@id='search_wiki_updated_date']");
     private By updateBeforeTheDate = By.xpath("//input[@id='search_updated_date']");
-
     private By searchFooterButton = By.xpath("//body/div[4]/main[1]/form[1]/div[2]/div[1]/div[1]/button[1]");
 
     public AdvancedSearchPage clickSearchHeaderButton() {
         driver.findElement(searchHeaderButton).click();
-        return this;
-    }
-
-    public AdvancedSearchPage clickSearchFooterButton() {
-        driver.findElement(searchFooterButton).click();
         return this;
     }
 
@@ -217,5 +217,61 @@ public class AdvancedSearchPage {
 
     /* Users options */
 
+    public AdvancedSearchPage withThisFullNameUO(String text) {
+        driver.findElement(withThisFullName).sendKeys(text);
+        return this;
+    }
+
+    public AdvancedSearchPage fromThisLocationUO(String text) {
+        driver.findElement(fromThisLocation).sendKeys(text);
+        return this;
+    }
+
+    public AdvancedSearchPage withThisManyFollowersUO(String text) {
+        driver.findElement(withThisManyFollowers).sendKeys(text);
+        return this;
+    }
+
+    public AdvancedSearchPage withThisManyPublicRepositoriesUO(String text) {
+        driver.findElement(withThisManyPublicRepositories).sendKeys(text);
+        return this;
+    }
+
+    public AdvancedSearchPage workingInThisLanguageUO(String text) {
+        driver.findElement(workingInThisLanguage).sendKeys(text);
+        return this;
+    }
+
+    public AdvancedSearchPage checkUsersOptions(String text1, String text2, String text3, String text4, String text5) {
+        this.withThisFullNameUO(text1);
+        this.fromThisLocationUO(text2);
+        this.withThisManyFollowersUO(text3);
+        this.withThisManyPublicRepositoriesUO(text4);
+        this.workingInThisLanguageUO(text5);
+        return new AdvancedSearchPage(driver);
+    }
+
     /* Wiki options */
+
+    public AdvancedSearchPage updatedBeforeTheDateWO(String text) {
+        driver.findElement(updatedBeforeTheDate).sendKeys(text);
+        return this;
+    }
+
+    public AdvancedSearchPage checkWikiOptions(String text1) {
+        this.updatedBeforeTheDateWO(text1);
+        return new AdvancedSearchPage(driver);
+    }
+
+    /**/
+
+    public AdvancedSearchPage clickSearchFooterButton() {
+        driver.findElement(searchFooterButton).click();
+        return this;
+    }
+
+    public SearchResultPage searchFromAdvancedFooter() {
+        clickSearchFooterButton();
+        return new SearchResultPage(driver);
+    }
 }

@@ -73,6 +73,33 @@ public class AdvancedSearchTest {
         Assert.assertEquals("created:2020-09-27 comments:100 label:bug author:hubot mentions:tpope assignee:twp updated:2020-12-30 language:HTML state:open", output);
     }
 
+    /* Users Options section validation */
+    @Test
+    public void checkAdvanceSearchWithUO() {
+        AdvancedSearchPage advancedSearchPage = new AdvancedSearchPage(driver);
+        advancedSearchPage.checkUsersOptions("Stanislav Serbin", "San Francisco, CA", "<10", "<5", "Java");
+        String output = driver.findElement(By.xpath("//body/div[4]/main[1]/form[1]/div[1]/div[1]/div[1]/div[1]/input[1]")).getAttribute("value");
+        Assert.assertEquals("fullname:\"Stanislav Serbin\" location:\"San Francisco\" location:CA followers:<10 repos:<5 language:Java", output);
+    }
+
+    /* Wiki Options section validation */
+    @Test
+    public void checkAdvancedSearchWithWO() {
+        AdvancedSearchPage advancedSearchPage = new AdvancedSearchPage(driver);
+        advancedSearchPage.checkWikiOptions("2020-12-31");
+        String output = driver.findElement(By.xpath("//body/div[4]/main[1]/form[1]/div[1]/div[1]/div[1]/div[1]/input[1]")).getAttribute("value");
+        Assert.assertEquals("updated:2020-12-31", output);
+    }
+
+    /* SearchFromFooter button validation */
+    @Test
+    public void checkSearchFooterButton() {
+        AdvancedSearchPage advancedSearchPage = new AdvancedSearchPage(driver);
+        advancedSearchPage.searchFromAdvancedFooter();
+        WebElement expectedElement = driver.findElement(By.xpath("//strong[contains(text(),'64M')]"));
+        Assert.assertTrue(expectedElement.isDisplayed());
+    }
+
     @After
     public void tearDown() { driver.close(); }
 }
