@@ -70,7 +70,7 @@ public class AdvancedSearchTest {
         AdvancedSearchPage advancedSearchPage = new AdvancedSearchPage(driver);
         advancedSearchPage.checkIssueOptions("open", "100", "bug", "hubot", "tpope", "twp", "2020-12-30");
         String output = driver.findElement(By.xpath("//body/div[4]/main[1]/form[1]/div[1]/div[1]/div[1]/div[1]/input[1]")).getAttribute("value");
-        Assert.assertEquals("created:2020-09-27 comments:100 label:bug author:hubot mentions:tpope assignee:twp updated:2020-12-30 language:HTML state:open", output);
+        Assert.assertEquals("comments:100 label:bug author:hubot mentions:tpope assignee:twp updated:2020-12-30 state:open", output);
     }
 
     /* Users Options section validation */
