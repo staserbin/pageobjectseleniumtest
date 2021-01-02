@@ -96,7 +96,7 @@ public class AdvancedSearchTest {
     public void checkSearchFooterButton() {
         AdvancedSearchPage advancedSearchPage = new AdvancedSearchPage(driver);
         advancedSearchPage.searchFromAdvancedFooter();
-        WebElement expectedElement = driver.findElement(By.xpath("//strong[contains(text(),'64M')]"));
+        WebElement expectedElement = driver.findElement(By.xpath("//body/div[4]/main[1]/div[1]/div[1]/form[1]/div[1]/div[1]/input[1]"));
         Assert.assertTrue(expectedElement.isDisplayed());
     }
 
