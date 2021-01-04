@@ -4,7 +4,7 @@ import org.openqa.selenium.WebDriver;
 
 public class MainPage {
 
-    private WebDriver driver;
+    public WebDriver driver;
 
     // Alt+Insert добавить Constructor
     public MainPage(WebDriver driver) {
@@ -53,6 +53,12 @@ public class MainPage {
     /* Метод для отправки поискового запроса с MainPage */
     public SearchResultPage tryToSearchWithText(String search) {
         driver.findElement(searchGitHubField).sendKeys(search);
+        driver.findElement(searchGitHubField).sendKeys(Keys.ENTER);
+        return new SearchResultPage(driver);
+    }
+
+    /* Метод для отправки ПУСТОГО поискового запроса с MainPage */
+    public SearchResultPage tryToSearchWithoutText() {
         driver.findElement(searchGitHubField).sendKeys(Keys.ENTER);
         return new SearchResultPage(driver);
     }

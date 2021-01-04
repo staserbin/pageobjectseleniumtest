@@ -3,34 +3,26 @@ import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
 import org.openqa.selenium.By;
+import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 
-import java.util.concurrent.TimeUnit;
 
-public class AdvancedSearchTest {
+public class AdvancedSearchTest extends Application{
 
-    private WebDriver driver;
-    private AdvancedSearchPage advancedSearchPage;
+    public WebDriver driver;
 
-    /* Перед запуском каждого теста будет: */
     @Before
     public void setUp() {
-        /* запускаться веб-драйвер */
-        System.setProperty("webdriver.chrome.driver", "C:\\Users\\SERBIN\\IdeaProjects\\pageobjectseleniumtest\\drivers\\chromedriver.exe");
-        driver = new ChromeDriver();
-        driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
-        driver.manage().window().maximize();
-        /* открываться указанный URL */
-        driver.get("https://github.com/search/advanced");
-        /* открываться страница поиска */
-        advancedSearchPage = new AdvancedSearchPage(driver);
+        driver = appSetUp();
     }
 
     /* Search field validation */
     @Test
     public void searchFromAdvancedSearchField() {
+        driver.findElement(By.xpath("//header/div[1]/div[2]/div[2]/div[1]/div[1]/div[1]/form[1]/label[1]/input[1]")).sendKeys(Keys.ENTER);
+        driver.findElement(By.xpath("//a[contains(text(),'advanced search')]")).click();
         AdvancedSearchPage advancedSearchPage = new AdvancedSearchPage(driver);
         advancedSearchPage.searchFromAdvanced("java");
         WebElement expectedElement = driver.findElement(By.xpath("//h3[contains(text(),'Java')]"));
