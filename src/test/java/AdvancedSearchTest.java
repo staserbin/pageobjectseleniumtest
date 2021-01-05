@@ -32,6 +32,8 @@ public class AdvancedSearchTest extends Application{
     /* Advanced Options section validation */
     @Test
     public void checkAdvancedSearchWithAO() {
+        driver.findElement(By.xpath("//header/div[1]/div[2]/div[2]/div[1]/div[1]/div[1]/form[1]/label[1]/input[1]")).sendKeys(Keys.ENTER);
+        driver.findElement(By.xpath("//a[contains(text(),'advanced search')]")).click();
         AdvancedSearchPage advancedSearchPage = new AdvancedSearchPage(driver);
         advancedSearchPage.checkAdvancedOptions("alex", "testrepo", "2020-12-24", "Java");
         String output = driver.findElement(By.xpath("//body/div[4]/main[1]/form[1]/div[1]/div[1]/div[1]/div[1]/input[1]")).getAttribute("value");
@@ -41,6 +43,8 @@ public class AdvancedSearchTest extends Application{
     /* Repositories Options section validation */
     @Test
     public void checkAdvancedSearchWithRO() {
+        driver.findElement(By.xpath("//header/div[1]/div[2]/div[2]/div[1]/div[1]/div[1]/form[1]/label[1]/input[1]")).sendKeys(Keys.ENTER);
+        driver.findElement(By.xpath("//a[contains(text(),'advanced search')]")).click();
         AdvancedSearchPage advancedSearchPage = new AdvancedSearchPage(driver);
         advancedSearchPage.checkRepositoriesOptions("100", "200", "150", "2020-12-24", "0bsd", "true");
         String output = driver.findElement(By.xpath("//body/div[4]/main[1]/form[1]/div[1]/div[1]/div[1]/div[1]/input[1]")).getAttribute("value");
@@ -50,6 +54,8 @@ public class AdvancedSearchTest extends Application{
     /* Code Options section validation */
     @Test
     public void checkAdvancedSearchWithCO() {
+        driver.findElement(By.xpath("//header/div[1]/div[2]/div[2]/div[1]/div[1]/div[1]/form[1]/label[1]/input[1]")).sendKeys(Keys.ENTER);
+        driver.findElement(By.xpath("//a[contains(text(),'advanced search')]")).click();
         AdvancedSearchPage advancedSearchPage = new AdvancedSearchPage(driver);
         advancedSearchPage.checkCodeOptions("jpg", "2000", "/test/path", "test.name", "true");
         String output = driver.findElement(By.xpath("//body/div[4]/main[1]/form[1]/div[1]/div[1]/div[1]/div[1]/input[1]")).getAttribute("value");
@@ -59,6 +65,8 @@ public class AdvancedSearchTest extends Application{
     /* Issues Options section validation */
     @Test
     public void checkAdvancedSearchWithIO() {
+        driver.findElement(By.xpath("//header/div[1]/div[2]/div[2]/div[1]/div[1]/div[1]/form[1]/label[1]/input[1]")).sendKeys(Keys.ENTER);
+        driver.findElement(By.xpath("//a[contains(text(),'advanced search')]")).click();
         AdvancedSearchPage advancedSearchPage = new AdvancedSearchPage(driver);
         advancedSearchPage.checkIssueOptions("open", "100", "bug", "hubot", "tpope", "twp", "2020-12-30");
         String output = driver.findElement(By.xpath("//body/div[4]/main[1]/form[1]/div[1]/div[1]/div[1]/div[1]/input[1]")).getAttribute("value");
@@ -68,6 +76,8 @@ public class AdvancedSearchTest extends Application{
     /* Users Options section validation */
     @Test
     public void checkAdvanceSearchWithUO() {
+        driver.findElement(By.xpath("//header/div[1]/div[2]/div[2]/div[1]/div[1]/div[1]/form[1]/label[1]/input[1]")).sendKeys(Keys.ENTER);
+        driver.findElement(By.xpath("//a[contains(text(),'advanced search')]")).click();
         AdvancedSearchPage advancedSearchPage = new AdvancedSearchPage(driver);
         advancedSearchPage.checkUsersOptions("Stanislav Serbin", "San Francisco, CA", "<10", "<5", "Java");
         String output = driver.findElement(By.xpath("//body/div[4]/main[1]/form[1]/div[1]/div[1]/div[1]/div[1]/input[1]")).getAttribute("value");
@@ -77,6 +87,8 @@ public class AdvancedSearchTest extends Application{
     /* Wiki Options section validation */
     @Test
     public void checkAdvancedSearchWithWO() {
+        driver.findElement(By.xpath("//header/div[1]/div[2]/div[2]/div[1]/div[1]/div[1]/form[1]/label[1]/input[1]")).sendKeys(Keys.ENTER);
+        driver.findElement(By.xpath("//a[contains(text(),'advanced search')]")).click();
         AdvancedSearchPage advancedSearchPage = new AdvancedSearchPage(driver);
         advancedSearchPage.checkWikiOptions("2020-12-31");
         String output = driver.findElement(By.xpath("//body/div[4]/main[1]/form[1]/div[1]/div[1]/div[1]/div[1]/input[1]")).getAttribute("value");
@@ -86,6 +98,8 @@ public class AdvancedSearchTest extends Application{
     /* SearchFromFooter button validation */
     @Test
     public void checkSearchFooterButton() {
+        driver.findElement(By.xpath("//header/div[1]/div[2]/div[2]/div[1]/div[1]/div[1]/form[1]/label[1]/input[1]")).sendKeys(Keys.ENTER);
+        driver.findElement(By.xpath("//a[contains(text(),'advanced search')]")).click();
         AdvancedSearchPage advancedSearchPage = new AdvancedSearchPage(driver);
         advancedSearchPage.searchFromAdvancedFooter();
         WebElement expectedElement = driver.findElement(By.xpath("//body/div[4]/main[1]/div[1]/div[1]/form[1]/div[1]/div[1]/input[1]"));

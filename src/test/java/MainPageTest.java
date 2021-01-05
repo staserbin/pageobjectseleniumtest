@@ -10,7 +10,7 @@ import java.net.MalformedURLException;
 import java.net.URL;
 import java.util.concurrent.TimeUnit;
 
-public class MainPageTest {
+public class MainPageTest extends Application {
 
     private WebDriver driver;
     private MainPage mainPage;
@@ -18,13 +18,8 @@ public class MainPageTest {
     /* Перед запуском каждого теста будет: */
     @Before
     public void setUp() {
-        /* запускаться веб-драйвер */
-        System.setProperty("webdriver.chrome.driver", "C:\\Users\\SERBIN\\IdeaProjects\\pageobjectseleniumtest\\drivers\\chromedriver.exe");
-        driver = new ChromeDriver();
-        driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
-        driver.manage().window().maximize();
-        /* открываться указанный URL */
-        driver.get("https://github.com/");
+        /* запускаться веб-драйвер и открываться указанный URL */
+        driver = appSetUp();
         /* открываться главная страница сайта */
         mainPage = new MainPage(driver);
     }
