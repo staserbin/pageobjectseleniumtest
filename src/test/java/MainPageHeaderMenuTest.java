@@ -5,7 +5,6 @@ import org.junit.Test;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
-import org.testng.reporters.jq.Main;
 
 import java.net.MalformedURLException;
 import java.net.URL;
@@ -124,6 +123,42 @@ public class MainPageHeaderMenuTest extends Application {
         String searchURL = securityPage2.getPageURL();
         URL url = new URL("https://github.com/security");
         Assert.assertEquals(url.toString(), searchURL);
+    }
+
+    @Test
+    public void checkTeam1() {
+        MainPageHeaderMenu mainPageHeaderMenu = new MainPageHeaderMenu(driver);
+        mainPageHeaderMenu.clickTeam();
+        WebElement expectedElem = driver.findElement(By.xpath("//h4[contains(text(),'GitHub for Teams')]"));
+        Assert.assertTrue(expectedElem.isDisplayed());
+    }
+
+    @Test
+    public void checkTeam2() throws MalformedURLException {
+        MainPageHeaderMenu mainPageHeaderMenu = new MainPageHeaderMenu(driver);
+        mainPageHeaderMenu.clickTeam();
+        TeamPage teamPage = new TeamPage(driver);
+        String searchURL = teamPage.getPageURL();
+        URL url = new URL("https://github.com/team");
+        Assert.assertEquals(url.toString(), searchURL);
+    }
+
+    @Test
+    public void checkEnterprise1() {
+        MainPageHeaderMenu mainPageHeaderMenu = new MainPageHeaderMenu(driver);
+        mainPageHeaderMenu.clickEnterprise();
+        WebElement expectedElem = driver.findElement(By.xpath("//h4[contains(text(),'GitHub for enterprises')]"));
+        Assert.assertTrue(expectedElem.isDisplayed());
+    }
+
+    @Test
+    public void checkEnterprise2() throws MalformedURLException {
+        MainPageHeaderMenu mainPageHeaderMenu = new MainPageHeaderMenu(driver);
+        mainPageHeaderMenu.clickEnterprise();
+        EnterprisePage enterprisePage = new EnterprisePage(driver);
+        String searchURl = enterprisePage.getPageURL();
+        URL url = new URL("https://github.com/enterprise");
+        Assert.assertEquals(url.toString(), searchURl);
     }
 
 

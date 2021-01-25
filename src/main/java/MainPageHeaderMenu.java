@@ -127,5 +127,15 @@ public class MainPageHeaderMenu {
         return new SecurityPage2(driver);
     }
 
+    public TeamPage clickTeam() {
+        driver.findElement(bTeam).click();
+        return new TeamPage(driver);
+    }
+
+    public EnterprisePage clickEnterprise() {
+        driver.findElement(bEnterprise).click();
+        return new EnterprisePage(driver);
+    }
+
 
 }
