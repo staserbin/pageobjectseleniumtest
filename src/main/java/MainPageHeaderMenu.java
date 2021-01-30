@@ -16,13 +16,14 @@ public class MainPageHeaderMenu {
     private By wghCodeReview = By.xpath("//a[contains(text(),'Code review')]");
     private By wghProjectManagement = By.xpath("//a[contains(text(),'Project management')]");
     private By wghIntegrations = By.xpath("//a[contains(text(),'Integrations')]");
-    private By wghActions = By.xpath("//header/div[1]/div[2]/nav[1]/ul[1]/li[1]/details[1]/div[1]/ul[1]/li[4]/a[1]");
+    private By wghActions = By.xpath("//header/div[1]/div[2]/nav[1]/ul[1]/li[1]/details[1]/div[1]/ul[1]/li[2]/a[1]");
     private By wghPackages = By.xpath("//a[contains(text(),'Packages')]");
-    private By wghSecurity = By.xpath("//header/div[1]/div[2]/nav[1]/ul[1]/li[1]/details[1]/div[1]/ul[1]/li[6]/a[1]");
-    private By wghTeamManagement = By.xpath("//a[contains(text(),'Team management')]");
-    private By wghHosting = By.xpath("//a[contains(text(),'Hosting')]");
-    private By wghCustomerStories = By.xpath("//header/div[1]/div[2]/nav[1]/ul[1]/li[1]/details[1]/div[1]/ul[2]/li[1]/a[1]");
-    private By wghSecurity2 = By.xpath("//header/div[1]/div[2]/nav[1]/ul[1]/li[1]/details[1]/div[1]/ul[2]/li[2]/a[1]");
+    private By wghSecurity = By.xpath("//header/div[1]/div[2]/nav[1]/ul[1]/li[1]/details[1]/div[1]/ul[1]/li[5]/a[1]");
+    /*private By wghTeamManagement = By.xpath("//a[contains(text(),'Team management')]");*/
+    /*private By wghHosting = By.xpath("//a[contains(text(),'Hosting')]");*/
+    private By wghGitHubSponsors = By.xpath("/html[1]/body[1]/div[1]/header[1]/div[1]/div[2]/nav[1]/ul[1]/li[1]/details[1]/div[1]/ul[2]/li[1]/a[1]");
+    private By wghCustomerStories = By.xpath("/html[1]/body[1]/div[1]/header[1]/div[1]/div[2]/nav[1]/ul[1]/li[1]/details[1]/div[1]/ul[2]/li[2]/a[1]");
+    private By wghSecurity2 = By.xpath("/html[1]/body[1]/div[1]/header[1]/div[1]/div[2]/nav[1]/ul[1]/li[1]/details[1]/div[1]/ul[2]/li[3]/a[1]");
 
     /* Team button */
     private By bTeam = By.xpath("//header/div[1]/div[2]/nav[1]/ul[1]/li[2]/a[1]");
@@ -103,16 +104,22 @@ public class MainPageHeaderMenu {
         return new SecurityPage(driver);
     }
 
-    public TeamManagementPage clickWghTeamManagement() {
+    /*public TeamManagementPage clickWghTeamManagement() {
         navigateToWhyGitHub();
         driver.findElement(wghTeamManagement).click();
         return new TeamManagementPage(driver);
-    }
+    }*/
 
-    public HostingPage clickWghHosting() {
+    /*public HostingPage clickWghHosting() {
         navigateToWhyGitHub();
         driver.findElement(wghHosting).click();
         return new HostingPage(driver);
+    }*/
+
+    public CustomerStoriesPage clickWghGitHubSponsors() {
+        navigateToWhyGitHub();
+        driver.findElement(wghGitHubSponsors).click();
+        return new CustomerStoriesPage(driver);
     }
 
     public CustomerStoriesPage clickWghCustomerStories() {

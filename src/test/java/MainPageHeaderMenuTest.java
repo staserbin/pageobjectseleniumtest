@@ -87,7 +87,7 @@ public class MainPageHeaderMenuTest extends Application {
         Assert.assertEquals(url.toString(), searchURL);
     }
 
-    @Test
+/*    @Test
     public void checkWghTeamManagement() throws MalformedURLException {
         MainPageHeaderMenu mainPageHeaderMenu = new MainPageHeaderMenu(driver);
         mainPageHeaderMenu.clickWghTeamManagement();
@@ -95,9 +95,9 @@ public class MainPageHeaderMenuTest extends Application {
         String searchURL = teamManagementPage.getPageURL();
         URL url = new URL("https://github.com/features#team-management");
         Assert.assertEquals(url.toString(), searchURL);
-    }
+    }*/
 
-    @Test
+    /*@Test
     public void checkWghHosting() throws MalformedURLException {
         MainPageHeaderMenu mainPageHeaderMenu = new MainPageHeaderMenu(driver);
         mainPageHeaderMenu.clickWghHosting();
@@ -105,6 +105,14 @@ public class MainPageHeaderMenuTest extends Application {
         String searchURL = hostingPage.getPageURL();
         URL url = new URL("https://github.com/features#hosting");
         Assert.assertEquals(url.toString(), searchURL);
+    }*/
+
+    @Test
+    public void checkWghGitHubSponsors() {
+        MainPageHeaderMenu mainPageHeaderMenu = new MainPageHeaderMenu(driver);
+        mainPageHeaderMenu.clickWghGitHubSponsors();
+        WebElement expectedElem = driver.findElement(By.xpath("//small[contains(text(),'GitHub Sponsors')]"));
+        Assert.assertTrue(expectedElem.isDisplayed());
     }
 
     @Test
