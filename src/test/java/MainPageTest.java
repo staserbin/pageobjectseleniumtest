@@ -75,9 +75,9 @@ public class MainPageTest extends Application {
     @Test
     public void searchFieldWithoutValue() throws MalformedURLException {
         SearchResultPage searchResultPage = mainPage.tryToSearchWithText("");
-        String searchURL = searchResultPage.getPageURL();
-        URL searchUrL = new URL("https://github.com/search?q=&type=");
-        Assert.assertEquals(searchUrL.toString(), searchURL);
+        String actualURL = searchResultPage.getPageURL();
+        URL expectedURL = new URL("https://github.com/search?q=&type=");
+        Assert.assertEquals(expectedURL.toString(), actualURL);
     }
 
     /* Проверка поля Search с поисковым запросом */

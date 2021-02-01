@@ -22,9 +22,9 @@ public class MainPageHeaderMenuTest extends Application {
         MainPageHeaderMenu mainPageHeaderMenu = new MainPageHeaderMenu(driver);
         mainPageHeaderMenu.clickWghFeatures();
         FeaturesPage featuresPage = new FeaturesPage(driver);
-        String searchURL = featuresPage.getPageURL();
-        URL url = new URL("https://github.com/features");
-        Assert.assertEquals(url.toString(), searchURL);
+        String actualURL = featuresPage.getPageURL();
+        URL expectedURL = new URL("https://github.com/features");
+        Assert.assertEquals(expectedURL.toString(), actualURL);
     }
 
     @Test
@@ -32,9 +32,9 @@ public class MainPageHeaderMenuTest extends Application {
         MainPageHeaderMenu mainPageHeaderMenu = new MainPageHeaderMenu(driver);
         mainPageHeaderMenu.clickWghCodeReview();
         CodeReviewPage codeReviewPage = new CodeReviewPage(driver);
-        String searchURL = codeReviewPage.getPageURL();
-        URL url = new URL("https://github.com/features/code-review/");
-        Assert.assertEquals(url.toString(), searchURL);
+        String actualURL = codeReviewPage.getPageURL();
+        URL expectedURL = new URL("https://github.com/features/code-review/");
+        Assert.assertEquals(expectedURL.toString(), actualURL);
     }
 
     @Test
@@ -42,9 +42,9 @@ public class MainPageHeaderMenuTest extends Application {
         MainPageHeaderMenu mainPageHeaderMenu = new MainPageHeaderMenu(driver);
         mainPageHeaderMenu.clickWghProjectManagement();
         ProjectManagementPage projectManagementPage = new ProjectManagementPage(driver);
-        String searchURL = projectManagementPage.getPageURL();
-        URL url = new URL("https://github.com/features/project-management/");
-        Assert.assertEquals(url.toString(), searchURL);
+        String actualURL = projectManagementPage.getPageURL();
+        URL expectedURL = new URL("https://github.com/features/project-management/");
+        Assert.assertEquals(expectedURL.toString(), actualURL);
     }
 
     @Test
@@ -52,9 +52,9 @@ public class MainPageHeaderMenuTest extends Application {
         MainPageHeaderMenu mainPageHeaderMenu = new MainPageHeaderMenu(driver);
         mainPageHeaderMenu.clickWghIntegrations();
         IntegrationsPage integrationsPage = new IntegrationsPage(driver);
-        String searchURL = integrationsPage.getPageURL();
-        URL url = new URL("https://github.com/features/integrations");
-        Assert.assertEquals(url.toString(), searchURL);
+        String actualURL = integrationsPage.getPageURL();
+        URL expectedURL = new URL("https://github.com/features/integrations");
+        Assert.assertEquals(expectedURL.toString(), actualURL);
     }
 
     @Test
@@ -62,9 +62,9 @@ public class MainPageHeaderMenuTest extends Application {
         MainPageHeaderMenu mainPageHeaderMenu = new MainPageHeaderMenu(driver);
         mainPageHeaderMenu.clickWghActions();
         ActionsPage actionsPage = new ActionsPage(driver);
-        String searchURL = actionsPage.getPageURL();
-        URL url = new URL("https://github.com/features/actions");
-        Assert.assertEquals(url.toString(), searchURL);
+        String actualURL = actionsPage.getPageURL();
+        URL expectedURL = new URL("https://github.com/features/actions");
+        Assert.assertEquals(expectedURL.toString(), actualURL);
     }
 
     @Test
@@ -72,9 +72,9 @@ public class MainPageHeaderMenuTest extends Application {
         MainPageHeaderMenu mainPageHeaderMenu = new MainPageHeaderMenu(driver);
         mainPageHeaderMenu.clickWghPackages();
         PackagesPage packagesPage = new PackagesPage(driver);
-        String searchURL = packagesPage.getPageURL();
-        URL url = new URL("https://github.com/features/packages");
-        Assert.assertEquals(url.toString(), searchURL);
+        String actualURL = packagesPage.getPageURL();
+        URL expectedURL = new URL("https://github.com/features/packages");
+        Assert.assertEquals(expectedURL.toString(), actualURL);
     }
 
     @Test
@@ -82,9 +82,9 @@ public class MainPageHeaderMenuTest extends Application {
         MainPageHeaderMenu mainPageHeaderMenu = new MainPageHeaderMenu(driver);
         mainPageHeaderMenu.clickWghSecurity();
         SecurityPage securityPage = new SecurityPage(driver);
-        String searchURL = securityPage.getPageURL();
-        URL url = new URL("https://github.com/features/security");
-        Assert.assertEquals(url.toString(), searchURL);
+        String actualURL = securityPage.getPageURL();
+        URL expectedURL = new URL("https://github.com/features/security");
+        Assert.assertEquals(expectedURL.toString(), actualURL);
     }
 
 /*    @Test
@@ -92,9 +92,9 @@ public class MainPageHeaderMenuTest extends Application {
         MainPageHeaderMenu mainPageHeaderMenu = new MainPageHeaderMenu(driver);
         mainPageHeaderMenu.clickWghTeamManagement();
         TeamManagementPage teamManagementPage = new TeamManagementPage(driver);
-        String searchURL = teamManagementPage.getPageURL();
-        URL url = new URL("https://github.com/features#team-management");
-        Assert.assertEquals(url.toString(), searchURL);
+        String actualURL = teamManagementPage.getPageURL();
+        URL expectedURL = new URL("https://github.com/features#team-management");
+        Assert.assertEquals(expectedURL.toString(), actualURL);
     }*/
 
     /*@Test
@@ -102,9 +102,9 @@ public class MainPageHeaderMenuTest extends Application {
         MainPageHeaderMenu mainPageHeaderMenu = new MainPageHeaderMenu(driver);
         mainPageHeaderMenu.clickWghHosting();
         HostingPage hostingPage = new HostingPage(driver);
-        String searchURL = hostingPage.getPageURL();
-        URL url = new URL("https://github.com/features#hosting");
-        Assert.assertEquals(url.toString(), searchURL);
+        String actualURL = hostingPage.getPageURL();
+        URL expectedURL = new URL("https://github.com/features#hosting");
+        Assert.assertEquals(expectedURL.toString(), actualURL);
     }*/
 
     @Test
@@ -128,9 +128,9 @@ public class MainPageHeaderMenuTest extends Application {
         MainPageHeaderMenu mainPageHeaderMenu = new MainPageHeaderMenu(driver);
         mainPageHeaderMenu.clickWghSecurity2();
         SecurityPage2 securityPage2 = new SecurityPage2(driver);
-        String searchURL = securityPage2.getPageURL();
-        URL url = new URL("https://github.com/security");
-        Assert.assertEquals(url.toString(), searchURL);
+        String actualURL = securityPage2.getPageURL();
+        URL expectedURL = new URL("https://github.com/security");
+        Assert.assertEquals(expectedURL.toString(), actualURL);
     }
 
     @Test
@@ -146,9 +146,9 @@ public class MainPageHeaderMenuTest extends Application {
         MainPageHeaderMenu mainPageHeaderMenu = new MainPageHeaderMenu(driver);
         mainPageHeaderMenu.clickTeam();
         TeamPage teamPage = new TeamPage(driver);
-        String searchURL = teamPage.getPageURL();
-        URL url = new URL("https://github.com/team");
-        Assert.assertEquals(url.toString(), searchURL);
+        String actualURL = teamPage.getPageURL();
+        URL expectedURL = new URL("https://github.com/team");
+        Assert.assertEquals(expectedURL.toString(), actualURL);
     }
 
     @Test
@@ -164,9 +164,101 @@ public class MainPageHeaderMenuTest extends Application {
         MainPageHeaderMenu mainPageHeaderMenu = new MainPageHeaderMenu(driver);
         mainPageHeaderMenu.clickEnterprise();
         EnterprisePage enterprisePage = new EnterprisePage(driver);
-        String searchURl = enterprisePage.getPageURL();
-        URL url = new URL("https://github.com/enterprise");
-        Assert.assertEquals(url.toString(), searchURl);
+        String actualURL = enterprisePage.getPageURL();
+        URL expectedURL = new URL("https://github.com/enterprise");
+        Assert.assertEquals(expectedURL.toString(), actualURL);
+    }
+
+    @Test
+    public void checkExplore1() throws MalformedURLException {
+        MainPageHeaderMenu mainPageHeaderMenu = new MainPageHeaderMenu(driver);
+        mainPageHeaderMenu.clickExplrExploreGitHub();
+        ExplorePage explorePage = new ExplorePage(driver);
+        String actualURL = explorePage.getPageURL();
+        URL expectedURL = new URL("https://github.com/explore");
+        Assert.assertEquals(expectedURL.toString(), actualURL);
+    }
+
+    @Test
+    public void checkExplore2() {
+        MainPageHeaderMenu mainPageHeaderMenu = new MainPageHeaderMenu(driver);
+        mainPageHeaderMenu.clickExplrExploreGitHub();
+        WebElement expectedElem = driver.findElement(By.xpath("//h2[contains(text(),\"Here's what's popular on GitHub today...\")]"));
+        Assert.assertTrue(expectedElem.isDisplayed());
+    }
+
+    @Test
+    public void checkExplrTopics1() {
+        MainPageHeaderMenu mainPageHeaderMenu = new MainPageHeaderMenu(driver);
+        mainPageHeaderMenu.clickExplrTopics();
+        WebElement expectedElem = driver.findElement(By.xpath("//h1[contains(text(),'Topics')]"));
+        Assert.assertTrue(expectedElem.isDisplayed());
+    }
+
+    @Test
+    public void checkExplrTopics2() throws MalformedURLException {
+        MainPageHeaderMenu mainPageHeaderMenu = new MainPageHeaderMenu(driver);
+        mainPageHeaderMenu.clickExplrTopics();
+        TopicsPage topicsPage = new TopicsPage(driver);
+        String actualURL = topicsPage.getPageURL();
+        URL expectedURL = new URL("https://github.com/topics");
+        Assert.assertEquals(expectedURL.toString(), actualURL);
+    }
+
+    @Test
+    public void checkExplrCollections1() {
+        MainPageHeaderMenu mainPageHeaderMenu = new MainPageHeaderMenu(driver);
+        mainPageHeaderMenu.clickExplrCollections();
+        WebElement expectedElem = driver.findElement(By.xpath("//h1[contains(text(),'Collections')]"));
+        Assert.assertTrue(expectedElem.isDisplayed());
+    }
+
+    @Test
+    public void checkExplrCollections2() throws MalformedURLException {
+        MainPageHeaderMenu mainPageHeaderMenu = new MainPageHeaderMenu(driver);
+        mainPageHeaderMenu.clickExplrCollections();
+        CollectionsPage collectionsPage = new CollectionsPage(driver);
+        String actualURL = collectionsPage.getPageURL();
+        URL expectedURL = new URL("https://github.com/collections");
+        Assert.assertEquals(expectedURL.toString(), actualURL);
+    }
+
+    @Test
+    public void checkExplrTrending1() {
+        MainPageHeaderMenu mainPageHeaderMenu = new MainPageHeaderMenu(driver);
+        mainPageHeaderMenu.clickExplrTrending();
+        WebElement expectedElem = driver.findElement(By.xpath("//h1[contains(text(),'Trending')]"));
+        Assert.assertTrue(expectedElem.isDisplayed());
+    }
+
+    @Test
+    public void checkExplrTrending2() throws MalformedURLException {
+        MainPageHeaderMenu mainPageHeaderMenu = new MainPageHeaderMenu(driver);
+        mainPageHeaderMenu.clickExplrTrending();
+        TrendingPage trendingPage = new TrendingPage(driver);
+        String actualURL = trendingPage.getPageURL();
+        URL expectedURL = new URL("https://github.com/trending");
+        Assert.assertEquals(expectedURL.toString(), actualURL);
+    }
+
+    @Test
+    public void checkExplrLearningLab() throws MalformedURLException {
+        MainPageHeaderMenu mainPageHeaderMenu = new MainPageHeaderMenu(driver);
+        mainPageHeaderMenu.clickExplrLearningLab();
+        LearningLabPage learningLabPage = new LearningLabPage(driver);
+        String actualURL = learningLabPage.getPageURL();
+        URL expectedURL = new URL("https://lab.github.com/");
+        Assert.assertEquals(expectedURL.toString(), actualURL);
+    }
+
+    @Test
+    public void checkExplrOpenSourceGuides() throws MalformedURLException {
+        MainPageHeaderMenu mainPageHeaderMenu = new MainPageHeaderMenu(driver);
+        mainPageHeaderMenu.clickExplrOpenSourceGuides();
+        OpenSourceGuidesPage openSourceGuidesPage = new OpenSourceGuidesPage(driver);
+        String actualURL = openSourceGuidesPage.getPageURL();
+        URL expectedURL = new URL("https://opensource.guide/");
+        Assert.assertEquals(expectedURL.toString(), actualURL);
     }
 
 
